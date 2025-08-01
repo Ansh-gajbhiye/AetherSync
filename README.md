@@ -56,3 +56,46 @@ This README outlines the project vision, tech choices, and how to get started—
 
 ##  Architecture
 
+
+1. **Client**  
+   - React app with Context for chat & queue state  
+   - Socket.IO client for real-time events  
+
+2. **Server**  
+   - Express HTTP endpoints for room creation, user management  
+   - Socket.IO handlers for chat and playback commands  
+
+3. **Sync Logic**  
+   - Server broadcasts `play`, `pause`, `seek` events  
+   - Clients apply simple clock-based offsets to stay in sync  
+
+---
+
+## ⚙️ Installation & Setup
+
+> **Prerequisites:** Node.js ≥14.x, npm or yarn
+
+```bash
+# 1. Clone the repo
+git clone https://github.com/your-username/aethersync.git
+cd aethersync
+
+# 2. Install dependencies (server & client)
+npm install
+cd client && npm install
+cd ../server && npm install
+
+# 3. Start server
+cd server
+npm run dev   # listens on http://localhost:4000
+
+# 4. Start client
+cd ../client
+npm run dev   # opens http://localhost:3000
+
+▼ ▼
+┌───────────┐ ┌────────────┐
+│ User & │ │ Queue & │
+│ Chat │ │ Sync │
+│ Module │ │ Module │
+└───────────┘ └────────────┘
