@@ -41,7 +41,7 @@ This README outlines the project vision, tech choices, and how to get started—
 
 ---
 
-## 🛠 Tech Stack
+##  Tech Stack
 
 | Layer           | Technology                                 |
 | --------------- | ------------------------------------------ |
@@ -71,7 +71,7 @@ This README outlines the project vision, tech choices, and how to get started—
 
 ---
 
-## ⚙️ Installation & Setup
+##  Installation & Setup
 
 > **Prerequisites:** Node.js ≥14.x, npm or yarn
 
