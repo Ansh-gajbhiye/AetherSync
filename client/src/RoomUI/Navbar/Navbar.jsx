@@ -25,7 +25,7 @@ function Navbar() {
    }, []);
 
   return (
-    <div className="max-w-8xl mx-auto px-4 py-4 sticky top-0 bg-gray-900 z-50">
+    <div className="max-w-8xl mx-auto px-4 py-4 backdrop-blur-md sticky top-0 z-50">
       <div className="flex items-center justify-between" >
         <div className=" text-2xl font-serif text-white ">
           AetherSync

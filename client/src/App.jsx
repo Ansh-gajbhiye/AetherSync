@@ -2,10 +2,12 @@
 import React, { useState } from 'react';
 import Navbar from './RoomUI/Navbar/Navbar';
 import Dashboard from './RoomUI/Dashboard/Dashboard';
+import hero from './assets/hero.jpg'
 
 function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-primary-900 to-primary-800">
+    <div 
+      className=" hero min-h-screen bg-cover bg-center  from-primary-900 to-primary-80">
       <Navbar/>
       <Dashboard/>
       <footer className="mt-auto py-6 bg-discord-dark">
