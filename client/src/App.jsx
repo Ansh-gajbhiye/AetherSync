@@ -7,7 +7,7 @@ import hero from './assets/hero.jpg'
 function App() {
   return (
     <div 
-      className=" hero min-h-screen bg-cover bg-center  from-primary-900 to-primary-80">
+      className=" 'bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-800' : 'bg-gradient-to-br from-blue-50 to-purple-100">
       <Navbar/>
       <Dashboard/>
       <footer className="mt-auto py-6 bg-discord-dark">
