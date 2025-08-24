@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 
-const Dashboard = () => {
+const Dashboard = ({darkMode}) => {
   const [activeTab, setActiveTab] = useState('home');
-  const [darkMode, setDarkMode] = useState(true);
 
   return (
     <div className={`min-h-screen w-full relative overflow-hidden transition-colors duration-500 ${darkMode ? 'bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-800' : 'bg-gradient-to-br from-blue-50 to-purple-100'}`}>
@@ -113,10 +112,10 @@ const Dashboard = () => {
             }`}>
               <div className="h-64 overflow-y-auto pr-2">
                 {[
-                  { user: 'Alex', message: 'This song is amazing! 🎵', time: '2:45 PM' },
-                  { user: 'Sam', message: 'I know right? This artist is my favorite', time: '2:46 PM' },
-                  { user: 'Jordan', message: 'Can we add this to our group playlist?', time: '2:47 PM' },
-                  { user: 'Taylor', message: 'Already added it! 😄', time: '2:48 PM' },
+                  { user: 'Ansh', message: 'This song is amazing! 🎵', time: '2:45 PM' },
+                  { user: 'Shantanu', message: 'I know right? This artist is my favorite', time: '2:46 PM' },
+                  { user: 'Danis', message: 'Can we add this to our group playlist?', time: '2:47 PM' },
+                  { user: '??', message: 'Already added it! 😄', time: '2:48 PM' },
                 ].map((msg, index) => (
                   <div key={index} className="mb-4 last:mb-0">
                     <div className="flex">
@@ -229,8 +228,6 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
-      
-
     </div>
   );
 };

@@ -1,12 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 
-function Navbar() {
+function Navbar({darkMode , setDarkMode}) {
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef(null);
   const [activeItem, setActiveItem] = useState(null);
-  const [scrolled, setScrolled] = useState(false);
-  const [darkMode, setDarkMode] = useState(true)
- 
+
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (menuRef.current && !menuRef.current.contains(event.target)) {
@@ -27,28 +25,14 @@ function Navbar() {
     return () => document.removeEventListener("keydown", handleKey);
   }, []);
 
-  
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 10);
-    };
-    
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   const navItems = ["Quest", "Developer", "Support", "Blog"];
 
   return (
-    <div className={`fixed w-full top-0 z-50 transition-all duration-300 ${
-      scrolled 
-        ? "bg-gray-900/90 backdrop-blur-lg py-2 shadow-xl" 
-        : "bg-gray-900/60 backdrop-blur-md py-3"
-    }`}>
+    <div className="fixed w-full top-0 z-50 transition-all duration-300 bg-gray-900/60 backdrop-blur-md py-3">
       <div className="max-w-8xl mx-auto px-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2">
-           
             <div className="text-2xl font-bold text-white font-sans tracking-tight">
               <span className="text-indigo-400">Aether</span>Sync
             </div>
@@ -76,7 +60,7 @@ function Navbar() {
           </ul>
           
           <div className="hidden md:flex items-center space-x-4">
-             <button 
+            <button 
               onClick={() => setDarkMode(!darkMode)}
               className={`p-2 rounded-full ${darkMode ? 'bg-gray-700' : 'bg-gray-200'}`}
             >
@@ -126,8 +110,24 @@ function Navbar() {
               menuOpen ? 'translate-y-0' : '-translate-y-full'
             }`}
           >
-           
             <div className="bg-gray-800/95 backdrop-blur-xl border-t border-gray-700">
+              <div className="flex justify-center py-4">
+                <button 
+                  onClick={() => setDarkMode(!darkMode)}
+                  className={`p-2 rounded-full ${darkMode ? 'bg-gray-700' : 'bg-gray-200'}`}
+                >
+                  {darkMode ? (
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                  ) : (
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                  )}
+                </button>
+              </div>
+              
               <ul className="flex flex-col py-4 text-lg">
                 {navItems.map(label => (
                   <li key={label}>
