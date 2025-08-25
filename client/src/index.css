@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 .hero {
-  background-image: url('./assets/hero.jpg'); /* relative to src/index.css */
   background-size: cover;
   background-position: center;
 }
