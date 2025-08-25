@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import Navbar from './RoomUI/Dashboard/Navbar';
-import Dashboard from './RoomUI/Dashboard/Dashboard';
-import Footer from './RoomUI/Dashboard/Footer';
+import Navbar from './RoomUI/Mainpanel/Navbar';
+import Dashboard from './RoomUI/Mainpanel/Dashboard';
+import Footer from './RoomUI/Mainpanel/Footer';
 
 function App() {
   const [darkMode, setDarkMode]=useState(true);
