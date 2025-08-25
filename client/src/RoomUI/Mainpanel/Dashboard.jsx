@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 const Dashboard = ({darkMode}) => {
   const [activeTab, setActiveTab] = useState('home');
-
+  const [startchatpage, setstartpage] = useState();
   return (
     <div className={`min-h-screen w-full relative overflow-hidden transition-colors duration-500 ${darkMode ? 'bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-800' : 'bg-gradient-to-br from-blue-50 to-purple-100'}`}>
       <div className="relative z-10 max-w-7xl mx-auto px-4 py-8">
@@ -25,8 +25,9 @@ const Dashboard = ({darkMode}) => {
                 darkMode 
                   ? 'bg-indigo-600 hover:bg-indigo-700 text-white shadow-lg shadow-indigo-500/30' 
                   : 'bg-indigo-600 hover:bg-indigo-700 text-white shadow-lg shadow-indigo-500/30'
-              }`}>
-                Start Listening Free
+              }`}
+              onClick={startchatpage}>
+                Start chatting 
               </button>
               <button className={`px-6 py-3 rounded-full font-medium border transition-colors ${
                 darkMode 
