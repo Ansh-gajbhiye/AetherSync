@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Dashboard = ({darkMode}) => {
   const [activeTab, setActiveTab] = useState('home');
-  const [startchatpage, setstartpage] = useState();
+  const navigate = useNavigate();
+  const startchatpage=()=>{
+    navigate('/chat');
+  };
   return (
     <div className={`min-h-screen w-full relative overflow-hidden transition-colors duration-500 ${darkMode ? 'bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-800' : 'bg-gradient-to-br from-blue-50 to-purple-100'}`}>
       <div className="relative z-10 max-w-7xl mx-auto px-4 py-8">
