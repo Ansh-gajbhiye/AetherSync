@@ -1,18 +1,20 @@
 import React from "react";
-import "./styles.css";
-import Login from "./components/Login";
-import Signup from "./components/Signup";
-import Error from "./components/Error";
-import { Route, Switch } from "react-router-dom";
+import "./index.css";
+import Login from "./LoginPage/Signup";
+import Signup from "./LoginPage/login";
+
+import { Route, Routes } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <Switch>
-        <Route path="/" component={Login} exact />
+      <Routes>
+       <Route path="/" component={Login} exact />
         <Route path="/signup" component={Signup} />
-        <Route component={Error} />
-      </Switch>
+        <Route component={Error} /> 
+      </Routes>
+        
+      
     </div>
   );
 }
